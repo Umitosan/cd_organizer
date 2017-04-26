@@ -1,7 +1,10 @@
 <h2>Success</h2>
 <p>(cd added)</p>
 <ul>
-  <li><%= @thiscd %></li>
+  <% Cd.list_all.each do |disc| %>
+    <li><%= disc.title %></li>
+  <% end %>
 </ul>
 <hr>
 <a href="/">Go Home</a>
+  <% %>

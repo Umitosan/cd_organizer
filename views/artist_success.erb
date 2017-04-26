@@ -1,7 +1,9 @@
 <h2>Success</h2>
 <p>(artist added)</p>
 <ul>
-  <li><%= @thisartist %></li>
+    <% Artist.list_all.each do |artist| %>
+      <li><%= artist.name %></li>
+    <% end %>
 </ul>
 <hr>
 <a href="/">Go Home</a>
