@@ -4,6 +4,7 @@ class Cd
   define_method(:initialize) do |title|
     @title = title
     @artist = ""
+    @id = @@cds.length.+(1)
   end
 
   define_method(:title) do
@@ -20,6 +21,10 @@ class Cd
 
   define_singleton_method(:clear) do
     @@cds = []
-
   end
+
+  define_method(:id) do
+    @id
+  end
+
 end

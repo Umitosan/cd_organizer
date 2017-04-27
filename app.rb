@@ -23,3 +23,10 @@ post('/artist-success') do
   @thisartist = my_artist.name()
   erb(:artist_success)
 end
+
+get('/artist_click/:id') do
+  this_artist = Artist.find(params.fetch('id').to_i())
+  @your_artist = this_artist.name()
+  @your_artist_id = this_artist.id()
+  erb(:artist_status)
+end

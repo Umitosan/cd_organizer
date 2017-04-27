@@ -1,9 +1,10 @@
 <h2>Success</h2>
-<p>(artist added)</p>
+<p>(artist added to list)</p>
 <ul>
-    <% Artist.list_all.each do |artist| %>
-      <li><%= artist.name %></li>
-    <% end %>
+  <% Artist.list_all.each do |artist| %>
+    <li><a href="/artist_click/<%= artist.id %>"><%= artist.name %><a></li>
+  <% end %>
 </ul>
 <hr>
 <a href="/">Go Home</a>
+<% %>

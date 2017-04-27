@@ -4,6 +4,7 @@ class Artist
   define_method(:initialize) do |name|
     @name = name
     @album_list = []
+    @id = @@artists.length().+(1)
   end
 
   define_method(:name) do
@@ -24,6 +25,20 @@ class Artist
 
   define_method(:albums) do
     @album_list
+  end
+
+  define_method(:id) do
+    @id
+  end
+
+  define_singleton_method(:find) do |id|
+    found_artist = nil
+    @@artists.each do |artist|
+      if artist.id().eql?(id)
+        found_artist = artist
+      end
+    end
+    found_artist
   end
 
 end
